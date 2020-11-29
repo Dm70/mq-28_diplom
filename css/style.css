@@ -11,6 +11,10 @@ li {
 	list-style-type: none;
 }
 
+body {
+	min-width: 320px;
+}
+
 /*Описание свойств для  заголовка страницы*/
 @font-face {
 	font-family: OpenSans-Regular;
@@ -50,12 +54,14 @@ li {
 .container-welcome {
 	position: relative;
 	z-index: 1;
+	padding-top: 27px;
+	padding-bottom: 126px;
 }
 
 .caption-logo {
 	display: flex;
 	width: 1170px;
-	padding-top: 27px;
+	/*padding-top: 27px;*/
 	padding-left: 15px;
 	padding-right: 15px;
 	margin-left: auto;
@@ -78,7 +84,7 @@ li {
 .menu-list-item a {
 	font-size: 13px;
 	color: #ffffff;
-	font-weight: 400;
+	/*font-weight: 400;*/
 	font-family: OpenSans-Regular;
 	text-align: center;
 	text-decoration: none;
@@ -91,15 +97,15 @@ li {
 }
 
 .menu-list-item:nth-of-type(n + 2) {
-	padding-left: 38px;
+	margin-left: 38px;
 }
 
 .caption-title {
 	width: 700px;
 	margin-left: auto;
 	margin-right: auto;
-	padding-top: 126px;
-	padding-bottom: 126px;
+	margin-top: 126px;
+	/*padding-bottom: 126px;*/
 	padding-left: 15px;
 	padding-right: 15px;
 }
@@ -107,12 +113,12 @@ li {
 .welcome-title {
 	font-size: 45px;
 	color: #ffffff;
-	font-weight: 400;
 	font-family: OpenSans-Bold;
 	text-align: center;
 	text-decoration: none;
 	text-transform: uppercase;
-	line-height: 75px;
+	/*line-height: 75px;*/
+	line-height: 1.6em;
 }
 
 /*Описание свойств для main*/
@@ -135,11 +141,10 @@ li {
 	width: 100%;
 }
 
-/*Описание загловка блока трендов*/
+/*Описание загловка Блока трендов*/
 .trend-caption {
 	font-size: 20px;
 	color: #0f0d0e;
-	font-weight: 400;
 	font-family: OpenSans-Bold;
 	text-align: center;
 	text-decoration: none;
@@ -161,16 +166,20 @@ li {
 }
 
 /*Опсание для карточек с трендами*/
-.trend-card-garden, .trend-card-cheese, .trend-card-mountain, .trend-card-lemon {
+.trend-card {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 	background-color: #000000;
 	position: relative;
-	/*z-index: 1;*/
 
+	display: flex;
+	align-items: flex-end;
+	padding: 15px 20px;
+	box-sizing: border-box;
+
+	min-height: 320px;
 	width: 25%;
-	/*height: 250px;*/
 }
 
 .trend-card-garden {
@@ -189,7 +198,7 @@ li {
 	background-image: url("../images/trend4.jpg");
 }
 
-.trend-card-garden::after, .trend-card-cheese::after, .trend-card-mountain::after, .trend-card-lemon::after {
+.trend-card::after {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -204,32 +213,25 @@ li {
 	margin-left: 3px;
 }
 
-.trend-card {
-	display: flex;
-	align-items: flex-end;
-}
-
-/*Описание trend-info карточек заголовка с описанием*/
+/*Описание Блока trend-info карточек заголовка с описанием*/
 .trend-info {
-	/*box-sizing:border-box;*/
-	margin-top: 158px;
-	margin-bottom: 14px;
-	margin-left: auto;
-	margin-right: auto;
-	padding-top: 37px;
-	padding-bottom: 33px;
-	padding-left: 36px;
+	box-sizing:border-box;
+	width: auto;
+	margin: 0;
+	padding: 35px;
 	border: 3px solid rgba(181,159,91,0.6);
 
 	position: relative;
 	z-index: 1;
+}
 
-	width: 300px;
+.trend-name {
+	margin-bottom: 11px;
 }
 
 .trend-name-list {
 	display:flex;
-	padding-bottom: 11px;
+	/*padding-bottom: 11px;*/
 }
 
 .trend-name-title a {
@@ -246,7 +248,8 @@ li {
 }
 
 .trend-name-title:nth-child(n+2) {
-	padding-left: 20px;
+	/*padding-left: 20px;*/
+	margin-left: 20px;
 }
 
 .trend-tile-text a {
@@ -255,11 +258,175 @@ li {
 	font-family: OpenSans-Bold;
 	text-align: left;
 	text-transform: uppercase;
-	line-height: 24px;
+	/*line-height: 24px;*/
+	line-height: 1.2em;
 }
 
 .trend-tile-text a:hover {
 	color: #b59f5b;
+}
+
+/*Описание для Блока Наши изделия*/
+/*Описание для Блока с карточками изделий*/
+.product {
+	margin-bottom: 60px;
+	/*margin-left: auto;
+	margin-right: auto;
+	width: 1200px;*/
+}
+
+/*Опиание загловка Блока изделий*/
+.product-caption {
+	font-size: 20px;
+	color: #0f0d0e;
+	font-family: OpenSans-Bold;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	line-height: normal;
+
+	margin-bottom: 44px;
+}
+
+.product-caption:after {
+	content: '';
+	display: block;
+	margin-top: 8px;
+	margin-left: auto;
+	margin-right: auto;
+	border-bottom: 3px solid #b59f5b;
+	width: 66px;
+	opacity: 0.4;
+}
+
+.product-card-list {
+	display: flex;
+	box-sizing: border-box;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	width: 1200px;
+}
+
+/*Описание Блока карточек изделий*/
+.product-card {
+	display: flex;
+	box-sizing: border-box;
+	flex-wrap: wrap;
+	justify-content: center;
+	min-height: 340px;
+	/*width: 33%;*/
+	max-width: 348px;
+	position: relative;
+}
+
+.product-card:nth-child(n+2) {
+	margin-left: 66px;
+}
+
+.pic-product {
+	position: relative;
+	z-index: 1;
+}
+
+.product-content {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+.product-info {
+	padding: 50px 20px;
+	margin-top: -30px;
+	border: 3px solid rgba(181,159,91,0.6);
+	position: relative;
+	z-index: 2;
+
+	width: auto;
+}
+
+.product-name {
+	font-size: 20px;
+	color: #0f0d0e;
+	font-family: OpenSans-Bold;
+	text-align: left;
+	text-transform: uppercase;
+	/*line-height: 24px;*/
+	line-height: 1.2em;
+}
+
+.product-text {
+	font-size: 15px;
+	color: #0f0d0e;
+	font-family: OpenSans-Regular;
+	text-align: left;
+	/*line-height: 22px;*/
+	line-height: 1.4em;
+	margin-top: 10px;
+	margin-bottom: 23px;
+}
+
+.product-text a {
+	color: #b59f5b;
+}
+
+.product-text a:hover {
+	text-decoration: underline;
+}
+
+.price {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.price-info {
+	display: block;
+}
+
+.price-old {
+	font-size: 14px;
+	color: #0f0d0e;
+	font-family: OpenSans-Bold;
+	text-align: left;
+	text-decoration: line-through;
+	line-height: normal;
+}
+
+.price-new {
+	font-size: 20px;
+	color: #0f0d0e;
+	font-family: OpenSans-Bold;
+	text-align: left;
+	/*text-decoration: line-through;*/
+	line-height: 1.2em;
+}
+
+.button-price {
+	box-sizing: border-box;
+	width: 41%;
+	height: 48px;
+	border: none;
+	/*margin-top: 20px;*/
+
+	display: inline-block;
+	vertical-align: middle;
+
+	cursor: pointer;
+	background-color: #b59f5b;
+
+	text-transform: uppercase;
+	color: #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.button-price:hover {
+	border: 0.1px solid #000000;
+	background-color: #323232;
+	opacity: 0.9;
 }
 
 /*Описание для Блока с карточками новстных постов и side-bar */
@@ -268,13 +435,16 @@ li {
 	width: 1200px;
 	margin-left: auto;
 	margin-right: auto;
+	padding-top: 64px;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 /*Описание свойств для  карточек новостных постов*/
 .post-list-news {
-	margin-top: 64px;
+	/*margin-top: 64px;*/
 	margin-bottom: 64px;
-	padding-left: 15px;
+	/*padding-left: 15px;*/
 }
 
 .card {
@@ -283,12 +453,18 @@ li {
 }
 
 .card:nth-child(n+2) {
-	padding-top: 60px;
+	/*padding-top: 60px;*/
+	margin-top: 60px;
+}
+
+.pic {
+	max-height: 294px;
 }
 
 .card-info {
-	padding-left: 30px;
-	width: 370px;
+	/*padding-left: 30px;*/
+	margin-left: 30px;
+	/*width: 370px;*/
 }
 
 .card-header {
@@ -310,11 +486,10 @@ li {
 
 .card-name-list {
 	display: flex;
-	list-style-type: none;
 }
 
 .card-name-title:nth-child(n+2) {
-	padding-left: 20px;
+	margin-left: 20px;
 }
 
 .card-name-link:hover {
@@ -322,19 +497,20 @@ li {
 }
 
 
-.card-title-text {
+.card-title {
 	margin-bottom: 37px;
 }
 
 .card-title a {
 	font-size: 20px;
 	color: #0f0d0e;
-	font-weight: 400;
+	/*font-weight: 400;*/
 	font-family: OpenSans-Bold;
 	text-align: left;
 	text-decoration: none;
 	text-transform: uppercase;
-	line-height: 24px;
+	/*line-height: 24px;*/
+	line-height: 1.2em;
 }
 
 .card-title a:hover {
@@ -348,18 +524,17 @@ li {
 .card-date {
 	font-size: 12px;
 	color: #888888;
-	font-weight: 400;
 	font-family: OpenSans-Regular;
 	text-align: left;
 	text-decoration: none;
-	padding-right: 15px;
+	margin-right: 15px;
 	line-height: normal;
 }
 
 .card-author {
 	font-size: 12px;
 	color: #000000;
-	font-weight: 400;
+	/*font-weight: 400;*/
 	font-family: OpenSans-Bold;
 	text-align: left;
 	text-decoration: none;
@@ -369,31 +544,32 @@ li {
 .card-content {
 	font-size: 15px;
 	color: #0f0d0e;
-	font-weight: 400;
+	/*font-weight: 400;*/
 	font-family: OpenSans-Regular;
 	text-align: left;
 	text-decoration: none;
-	line-height: 22px;
+	/*line-height: 22px;*/
+	line-height: 1.4em;
 }
 
-p {
+.card-content p {
 	margin-bottom: 15px;
 }
 
 /*Описание свойств для  карточек Side Bar*/
 .post-news-sidebar {
 	margin-left: 120px;
-	margin-top: 64px;
+	/*margin-top: 64px;*/
 }
 
-.post {
+/*.post {
 	padding-right: 15px;
-}
+}*/
 
 .post-title {
-	display: inline-block;
+	/*display: inline-block;*/
 	margin-bottom: 30px;
-	width: 270px;
+	/*width: 270px;*/
 	text-align: center;
 	line-height: normal;
 	vertical-align: top;
@@ -413,17 +589,18 @@ p {
 .title-name, .mail-name, .tags-name, .topics-name {
 	font-size: 14px;
 	color: #0f0d0e;
-	font-weight: 400;
+	/*font-weight: 400;*/
 	font-family: OpenSans-Bold;
 	text-align: center;
 	text-decoration: none;
 	text-transform: uppercase;
-	line-height: 29.15px;
+	/*line-height: 29.15px;*/
+	line-height: 2em;
 }
 
 .post-list-sidebar {
 	display: flex;
-	width: 285px;
+	/*width: 285px;*/
 }
 
 .post-header {
@@ -432,7 +609,7 @@ p {
 
 .post-date {
 	font-size: 12px;
-	font-weight: 400;
+	/*font-weight: 400;*/
 	font-family: OpenSans-Regular;
 	text-align: left;
 	text-decoration: none;
@@ -443,12 +620,13 @@ p {
 .header-name a {
 	font-size: 14px;
 	color: #000000;
-	font-weight: 400;
+	/*font-weight: 400;*/
 	font-family: OpenSans-Bold;
 	text-align: left;
 	text-decoration: none;
 	text-transform: uppercase;
-	line-height: 18px;
+	/*line-height: 18px;*/
+	line-height: 1.3em;
 }
 
 .header-name a:hover {
@@ -456,7 +634,7 @@ p {
 }
 
 .post-list-sidebar:nth-child(n+3) {
-	padding-top: 22px;
+	margin-top: 22px;
 }
 
 /*Описание формы поиска Search*/
@@ -470,7 +648,8 @@ p {
 
 .field {
 	box-sizing: border-box;
-	width: 223px;
+	/*width: 223px;*/
+	width: calc(17.8rem - 48px);
 	height: 48px;
 	border: none;
 	padding: 10px 20px 10px 20px;
@@ -529,9 +708,9 @@ p {
 }
 
 .post-mail {
-	display: inline-block;
+	/*display: inline-block;*/
 	margin-bottom: 30px;
-	width: 270px;
+	/*width: 270px;*/
 	text-align: center;
 	line-height: normal;
 	vertical-align: top;
@@ -550,7 +729,7 @@ p {
 
 .field-subscribe {
 	box-sizing: border-box;
-	width: 270px;
+	width: 100%;
 	border: none;
 	padding: 10px 20px 10px 20px;
 	margin: 0;
@@ -570,7 +749,7 @@ p {
 
 .button-subscribe {
 	box-sizing: border-box;
-	width: 270px;
+	width: 100%;
 	height: 48px;
 	border: none;
 	margin-top: 20px;
@@ -599,9 +778,9 @@ p {
 }
 
 .post-tags {
-	display: inline-block;
+	/*display: inline-block;*/
 	margin-bottom: 20px;
-	width: 270px;
+	/*width: 270px;*/
 	text-align: center;
 	line-height: normal;
 	vertical-align: top;
@@ -636,6 +815,7 @@ p {
 }
 
 .tag-name-link {
+	display: block;
 	font-size: 12px;
 	color: #0f0d0e;
 	font-weight: bold;
@@ -643,7 +823,8 @@ p {
 	justify-content: flex-start;
 	text-decoration: none;
 	text-transform: uppercase;
-	line-height: 30px;
+	/*line-height: 30px;*/
+	/*line-height: 2.5em;*/
 
 	padding-left: 14px;
 	padding-right: 14px;
@@ -662,9 +843,9 @@ p {
 }
 
 .post-topics {
-	display: inline-block;
+	/*display: inline-block;*/
 	margin-bottom: 20px;
-	width: 270px;
+	/*width: 270px;*/
 	text-align: center;
 	line-height: normal;
 	vertical-align: top;
@@ -681,10 +862,6 @@ p {
 	opacity: 0.4;
 }
 
-.topic {
-	width: 270px;
-}
-
 .topic-container {
 	list-style-type: none;
 }
@@ -699,7 +876,8 @@ p {
 	font-family: OpenSans-Bold;
 	justify-content: flex-start;
 	text-decoration: none;
-	line-height: 46.98px;
+	/*line-height: 46.98px;*/
+	line-height: 3.3em;
 }
 
 .topic-name a:hover {
@@ -710,19 +888,24 @@ p {
 	font-size: 12px;
 	color: #b59f5b;
 	font-family: OpenSans-Bold;
-	line-height: 36.82px;
+	/*line-height: 36.82px;*/
+	/*line-height: 3em;*/
 	padding-left: 4px;
 	vertical-align: super;
 }
 
 /*Описание для раздела Footer*/
+footer {
+	padding-bottom: 40px;
+}
+
 .footer-socials {
 	background-position: center center;
 	background-color: #f4f7f6;
 	background-size: cover;
 
 	width: 1170px;
-	height: 83px;
+	/*height: 83px;*/
 
 	margin: auto;
 }
@@ -730,15 +913,15 @@ p {
 .address-container {
 	display: flex;
 	justify-content:center;
-	/*align-items: center;
-	padding-top: 17px;
-	padding-bottom: 17px;*/
+	align-items: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 .socials {
 	display: flex;
 	align-items: center;
-	height: 83px;
+	/*height: 83px;*/
 }
 
 .socials-item {
@@ -746,7 +929,11 @@ p {
 	list-style-type:none;
 	-webkit-user-select:none;
 	-moz-user-select:none;
-	margin-right: 23px;
+	/*margin-right: 23px;*/
+}
+
+.socials-item:nth-child(n+2) {
+	margin-left: 23px;
 }
 
 .twitter::after {
@@ -831,14 +1018,15 @@ p {
 	justify-content:center;
 	margin: auto;
 	margin-top: 74px;
-	margin-bottom: 40px;
+	/*margin-bottom: 40px;*/
 }
 
 .copyright a {
 	text-align: center;
 	font-family: OpenSans-Bold;
 	font-size: 12px;
-	line-height: 40px;
+	/*line-height: 40px;*/
+	line-height: 3.3em;
 	color: #999999;
 	text-decoration: none;
 }
